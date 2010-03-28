@@ -1,0 +1,14 @@
+History.txt
+Manifest.txt
+PostInstall.txt
+README
+README.rdoc
+Rakefile
+lib/email-integrator.rb
+script/console
+script/destroy
+script/generate
+spec/email-integrator_spec.rb
+spec/spec.opts
+spec/spec_helper.rb
+tasks/rspec.rake
