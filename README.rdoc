@@ -1,14 +1,16 @@
 = email-integrator
 
-* http://github.com/#{github_username}/#{project_name}
+* http://github.com/voomify/email-integrator
 
 == DESCRIPTION:
 
-FIX (describe your package)
+This gem will allow you to use email as a simple message queue like integrator
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* Reads an email inbox and allows a derived class to process the message
+* Logs errors and ignored records
+* errors are sent to hoptoad
 
 == SYNOPSIS:
 
@@ -16,17 +18,19 @@ FIX (describe your package)
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+Hoptoad for error notifications
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+git clone git://github.com/voomify/email-integrator.git
+cd email-integrator
+rake install_gem
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2010 russelledens
+Copyright (c) 2010 russelledens and Voomify, LLC
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
