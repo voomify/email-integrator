@@ -14,30 +14,30 @@ describe EmailIntegrator do
   end
   
   it "throws exception if server is not passed" do
-    should_throw_exception do
-      EmailIntegrator.new(:username=>"username",
+    should_throw_exception(ArgumentError) do
+      EmailIntegrator::POP3.new(:username=>"username",
                           :password=>"password")
     end
   end
 
   it "throws exception if username is not passed" do
-    should_throw_exception do
-      EmailIntegrator.new(:server=>"server",
+    should_throw_exception(ArgumentError) do
+      EmailIntegrator::POP3.new(:server=>"server",
                           :password=>"password")
     end
   end
 
   it "throws exception if password is not passed" do
-    should_throw_exception do
-      EmailIntegrator.new(:server=>"server",
+    should_throw_exception(ArgumentError) do
+      EmailIntegrator::POP3.new(:server=>"server",
                           :username=>"username")
     end
   end
 
 
   it "throws exception if bad server is passed" do
-      should_throw_exception do
-        EmailIntegrator.new(:server=>"garbage",
+      should_throw_exception(SocketError) do
+        EmailIntegrator::POP3.new(:server=>"garbage",
                             :username=>"username",
                             :password=>"password").process(/.*/) { |msg| }
       end
@@ -52,7 +52,6 @@ describe EmailIntegrator do
     mock_connection.should_receive(:mails).and_return([mock_message])
     mock_connection.should_receive(:start).and_yield(mock_connection)
 
-    #Net::POP3.should_receive(:new).and_return(MockConnection.new)
     Net::POP3.should_receive(:new).and_return(mock_connection)
 
 
@@ -75,7 +74,6 @@ describe EmailIntegrator do
 
     #Net::POP3.should_receive(:new).and_return(MockConnection.new)
     Net::POP3.should_receive(:new).and_return(mock_connection)
-
 
     EmailIntegrator::POP3.new(:server=>"garbage",
                              :username=>"username",

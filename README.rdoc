@@ -22,7 +22,19 @@ Hoptoad for error notifications
 
 == INSTALL:
 
+This gem is not published. You can install it locally using the following.
+For rails you should vendor the gem.
+
 git clone git://github.com/voomify/email-integrator.git
+
+# This is required by hoe and to install the gem locally you have to run it.
+$ sudo gem install rubyforge
+
+# create a default ~/.rubyforge/user-config.yml  file.
+# note the existence of the  ~/.rubyforge/user-config.yml  file.
+# you don't need a rubyforge account, only this file with ANY values in it
+$ rubyforge setup
+
 cd email-integrator
 rake install_gem
 

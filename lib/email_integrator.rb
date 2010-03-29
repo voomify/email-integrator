@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/email-integrator/email_integrator.rb'
+require File.dirname(__FILE__) + '/email_integrator/email_integrator.rb'
 
 
 module EmailIntegrator
