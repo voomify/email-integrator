@@ -1,0 +1,64 @@
+= email-integrator
+
+* http://github.com/voomify/email-integrator
+
+== DESCRIPTION:
+
+This gem will allow you to use email as a simple message queue like integrator
+
+== FEATURES/PROBLEMS:
+
+* Reads an email inbox and allows a derived class to process the message
+* Logs errors and ignored records
+* errors are sent to hoptoad
+
+== SYNOPSIS:
+
+  FIX (code sample of usage)
+
+== REQUIREMENTS:
+
+Hoptoad for error notifications
+
+== INSTALL:
+
+This gem is not published. You can install it locally using the following.
+For rails you should vendor the gem.
+
+git clone git://github.com/voomify/email-integrator.git
+
+# This is required by hoe and to install the gem locally you have to run it.
+$ sudo gem install rubyforge
+
+# create a default ~/.rubyforge/user-config.yml  file.
+# note the existence of the  ~/.rubyforge/user-config.yml  file.
+# you don't need a rubyforge account, only this file with ANY values in it
+$ rubyforge setup
+
+cd email-integrator
+rake install_gem
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2010 russelledens and Voomify, LLC
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
