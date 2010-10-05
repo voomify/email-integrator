@@ -1,24 +1,31 @@
-require 'rubygems'
-gem 'hoe', '>= 2.1.0'
-require 'hoe'
-require 'fileutils'
-require './lib/email_integrator'
-
-Hoe.plugin :newgem
-# Hoe.plugin :website
-# Hoe.plugin :cucumberfeatures
-
-# Generate all the Rake tasks
-# Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.spec 'email_integrator' do
-  self.developer 'russelledens', 'russell@voomify.com'
-  self.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
-  # self.extra_deps         = [['activesupport','>= 2.0.2']]
-end
-
-require 'newgem/tasks'
-Dir['tasks/**/*.rake'].each { |t| load t }
 
 # TODO - want other tests/tasks run by default? Add them to the list
 # remove_task :default
 # task :default => [:spec, :features]
+
+namespace :gem do
+  begin
+    require 'jeweler'
+    gem_name = 'voomify_email_integrator'
+
+    Jeweler::Tasks.new do |gem|
+      gem.name = gem_name
+      gem.summary = 'Voomify email integrator. Reads POP3 emails.'
+      gem.files = Dir['{lib}/**/*', '{tasks}/**/*']
+      gem.author = 'Russell Edens'
+      gem.email =  'russell@voomify.com'
+      gem.description = 'This gem contains the logic for reading email from a pop3 mailbox'
+      gem.homepage = 'http://www.github.com/voomify/email_integrator'
+      # other fields that would normally go in your gemspec also be included here
+    end
+  rescue
+    puts 'Jeweler or one of its dependencies is not installed.'
+  end
+
+   task :uninstall do
+    sh "gem uninstall #{gem_name}"
+   end
+
+  task :reinstall =>[:uninstall,:install]
+
+end

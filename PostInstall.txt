@@ -1,3 +1,0 @@
-For more information on email-integrator, see http://github.com/voomify/email-integrator
-
-
