@@ -7,6 +7,7 @@ require 'pp'
 # It should be used with craken or cron
 #
 module EmailIntegrator
+
   class POP3
     def initialize(connection)
       @connection = connection

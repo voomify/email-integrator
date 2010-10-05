@@ -46,7 +46,7 @@ describe EmailIntegrator do
   it "process email" do
 
     mock_message = mock('message')
-    mock_message.should_receive(:pop).and_return("look at me")
+    mock_message.should_receive(:pop).at_least(1).and_return("look at me")
 
     mock_connection = mock('connection')
     mock_connection.should_receive(:mails).and_return([mock_message])
@@ -66,7 +66,7 @@ describe EmailIntegrator do
   it "process email but don't find a message" do
 
     mock_message = mock('message')
-    mock_message.should_receive(:pop).and_return("look at me")
+    mock_message.should_receive(:pop).at_least(1).and_return("look at me")
 
     mock_connection = mock('connection')
     mock_connection.should_receive(:mails).and_return([mock_message])

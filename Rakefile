@@ -1,3 +1,4 @@
+require 'spec/rake/spectask'
 
 # TODO - want other tests/tasks run by default? Add them to the list
 # remove_task :default
@@ -30,3 +31,12 @@ namespace :gem do
   task :reinstall =>[:uninstall,:install]
 
 end
+
+desc "Run all specs"
+task :spec do
+  Spec::Rake::SpecTask.new(:spec) do |t|
+    t.spec_files = FileList['spec']
+    t.libs << 'lib'
+  end
+end
+
